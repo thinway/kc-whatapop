@@ -216,6 +216,6 @@ Ahora mismo no tenemos muchas opciones para filtrar los productos, ni hablemos y
 
 ### Brick Red Path (AKA Teja): Productos por vendedor
 
-Y aquí llegó el **Señor Path**, el que te todo lo puede. O no todo, pero sí que es algo más complicado y por eso lo hago saber. ¿Qué debemos desarrollar en este **Path**? Pues necesitamos tener localizado un punto donde pintar la colección de productos que está vendiendo un usuario concreto. Aportaría mucho valor a **Whatapop** ofrecer la posibilidad de consultar otros productos vendidos por el mismo usuario.
+Y aquí llegó el **Señor Path**, el que te todo lo puede. O no todo, pero sí que es algo más complicado que los anteriores y por eso lo hago saber. ¿Qué debemos desarrollar en este **Path**? Pues necesitamos tener localizado un punto donde pintar la colección de productos que está vendiendo un usuario concreto. Aportaría mucho valor a **Whatapop** ofrecer la posibilidad de consultar otros productos vendidos por el mismo usuario. ¡Demuestra que sabes hacerlo! ¡Hay una piruleta de colores en juego!
 
-**Pista:** quizá puedas reutilizar algo de código: ¿recuerdas el componente que mostraba una colección de contactos?
+**Pista:** quizá puedas reutilizar algo de código. ¿Recuerdas el componente que mostraba una colección de productos?
