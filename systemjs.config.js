@@ -14,8 +14,6 @@
             "@angular/router": "npm:@angular/router/bundles/router.umd.js",
             "@angular/router/upgrade": "npm:@angular/router/bundles/router-upgrade.umd.js",
             "@angular/forms": "npm:@angular/forms/bundles/forms.umd.js",
-            "@angular/upgrade": "npm:@angular/upgrade/bundles/upgrade.umd.js",
-            "@angular/upgrade/static": "npm:@angular/upgrade/bundles/upgrade-static.umd.js",
             "rxjs": "npm:rxjs",
             "angular-in-memory-web-api": "npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js",
             "moment": "npm:moment",
