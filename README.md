@@ -171,7 +171,7 @@ Dependencias:
 Documentos:
 
 - app/components/products-collection/**products-collection.component.html**
-- app/components/services/**sold-products-resolve.service.ts**
+- app/services/**sold-products-resolve.service.ts**
 - app/services/**product.service.ts**
 
 Qué practicamos:
