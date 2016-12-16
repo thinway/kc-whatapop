@@ -13,6 +13,7 @@
 
         <product
             *ngFor="let product of _products"
+            (buyItemClick)="buyItem($event)"
             [data]="product"
             class="column">
         </product>
