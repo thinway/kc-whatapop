@@ -71,7 +71,11 @@ export class ProductService {
         |       state=x (siendo x el estado)                               |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-        // console.log(urlParams.toString());
+        if( filter && filter.state !== undefined ){
+            urlParams.set('state', filter.state);
+        }
+
+        console.log(urlParams.toString());
         return this._http
             .get(`${this._backendUri}/products?${urlParams.toString()}`)
             .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
