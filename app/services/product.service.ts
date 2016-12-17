@@ -29,7 +29,9 @@ export class ProductService {
         |   _sort=publishedDate&_order=DESC                                |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-        let baseSearchOpts: string = "_sort=publishedDate&_order=DESC";
+        let urlParams: URLSearchParams = new URLSearchParams();
+        urlParams.set('_sort', 'publishedDate');
+        urlParams.set('_order', 'DESC');
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Red Path                                                         |
@@ -47,6 +49,13 @@ export class ProductService {
         |       category.id=x (siendo x el identificador de la categoría)  |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+        if( filter && filter.text !== undefined) {
+            urlParams.set('q', filter.text);
+        }
+
+        if( filter  && filter.category !== undefined) {
+            urlParams.set('category.id', filter.category);
+        }
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Yellow Path                                                      |
@@ -62,8 +71,9 @@ export class ProductService {
         |       state=x (siendo x el estado)                               |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+        // console.log(urlParams.toString());
         return this._http
-            .get(`${this._backendUri}/products?${baseSearchOpts}`)
+            .get(`${this._backendUri}/products?${urlParams.toString()}`)
             .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
     }
 
