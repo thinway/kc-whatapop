@@ -1,0 +1,9 @@
+<i
+    class="fa"
+    [ngClass]="{
+        'fa-heart-o': !like,
+        'fa-heart': like}"
+    aria-hidden="true"
+    (click)="changeLikeStatus(like?false:true)">
+</i>
+

@@ -1,8 +1,15 @@
 <div class="row" *ngIf="_product">
     <div class="medium-4 columns">
-        <img [src]="getImageSrc()" class="thumbnail" />
+        <img [src]="getImageSrc()" class="thumbnail medium-12 columns" />
     </div>
     <div class="medium-8 columns">
+
+        <like
+            (changeLike)="likeProduct($event)"
+            [product]="_product"
+            [like]="isLikeProduct()">
+        </like>
+
         <h3>{{ _product.name }}</h3>
         <p>
             <span class="label" [ngClass]="{

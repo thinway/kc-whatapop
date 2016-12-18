@@ -1,0 +1,9 @@
+.fa-heart, .fa-heart-o {
+    color: #2199e8;
+    font-size: 1em;
+    text-align: center;
+}
+
+.fa-heart:hover, .fa-heart-o:hover {
+    cursor: pointer;
+}

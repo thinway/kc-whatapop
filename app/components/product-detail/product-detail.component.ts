@@ -61,4 +61,21 @@ export class ProductDetailComponent implements OnDestroy, OnInit {
     goBack(): void {
         window.history.back();
     }
+
+    isLikeProduct(): boolean {
+        if ( typeof(Storage) !== undefined ) {
+            return localStorage.getItem(`likeProduct${this._product.id}`) === 'true';
+        }else{
+            alert("No se pueden guardar tus likes!!! Usa un navegador de este siglo maldito!!!");
+        }
+
+    }
+
+    likeProduct(like: boolean): void {
+        if ( typeof(Storage) !== undefined ) {
+            localStorage.setItem(`likeProduct${this._product.id}`, like.toString());
+        }else{
+            alert("No se pueden guardar tus likes!!! Usa un navegador de este siglo maldito!!!");
+        }
+    }
 }
