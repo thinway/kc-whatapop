@@ -8,8 +8,8 @@
             (click)="changeOrderByName()">
             <i
                 class="fa"
-                [class.fa-sort-alpha-asc]="orderDirectionByName === 'asc'"
-                [class.fa-sort-alpha-desc]="orderDirectionByName !== 'asc'"
+                [class.fa-sort-alpha-desc]="orderDirectionByName === 'asc'"
+                [class.fa-sort-alpha-asc]="orderDirectionByName !== 'asc'"
                aria-hidden="true">Ordenar por nombre</i>
         </button>
         &nbsp;&nbsp;
@@ -17,8 +17,8 @@
             <i
                 (click)="changeOrderByPrice()"
                 class="fa"
-                [class.fa-sort-amount-asc]="orderDirectionByPrice === 'asc'"
-                [class.fa-sort-amount-desc]="orderDirectionByPrice !== 'asc'"
+                [class.fa-sort-amount-desc]="orderDirectionByPrice === 'asc'"
+                [class.fa-sort-amount-asc]="orderDirectionByPrice !== 'asc'"
                 aria-hidden="true">Ordenar por precios</i>
         </button>
     </div>

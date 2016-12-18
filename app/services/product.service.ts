@@ -53,10 +53,21 @@ export class ProductService {
             urlParams.set('q', filter.text);
         }
 
-        if( filter  && filter.category !== undefined) {
+        if( filter && filter.category !== undefined) {
             urlParams.set('category.id', filter.category);
         }
 
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+         | Yellow Path                                                      |
+         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        if ( filter && filter.priceMin !== "" && filter.priceMin !== undefined) {
+            urlParams.set('price_gte', filter.priceMin);
+        }
+
+        if ( filter && filter.priceMax !== "" && filter.priceMax !== undefined ) {
+            urlParams.set('price_lte', filter.priceMax);
+        }
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Yellow Path                                                      |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|

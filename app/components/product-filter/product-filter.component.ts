@@ -21,8 +21,8 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this._categoriesSubscription = this._categoryService
-                                           .getCategories()
-                                           .subscribe((data: Category[]) => this._categories = data);
+            .getCategories()
+            .subscribe((data: Category[]) => this._categories = data);
     }
 
     ngOnDestroy(): void {
