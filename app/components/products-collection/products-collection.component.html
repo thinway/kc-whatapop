@@ -2,6 +2,26 @@
     <div class="small-12 large-12 columns">
         <product-filter (onSearch)="filterCollection($event)"></product-filter>
     </div>
+    <!-- Filtro avanzado -->
+    <div id="product-filter-advanced" class="small-12 large-12 columns">
+        <button
+            (click)="changeOrderByName()">
+            <i
+                class="fa"
+                [class.fa-sort-alpha-asc]="orderDirectionByName === 'asc'"
+                [class.fa-sort-alpha-desc]="orderDirectionByName !== 'asc'"
+               aria-hidden="true">Ordenar por nombre</i>
+        </button>
+        &nbsp;&nbsp;
+        <button>
+            <i
+                (click)="changeOrderByPrice()"
+                class="fa"
+                [class.fa-sort-amount-asc]="orderDirectionByPrice === 'asc'"
+                [class.fa-sort-amount-desc]="orderDirectionByPrice !== 'asc'"
+                aria-hidden="true">Ordenar por precios</i>
+        </button>
+    </div>
     <div *ngIf="_products?.length > 0" class="small-up-2 medium-up-4 large-up-6">
 
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
@@ -12,7 +32,7 @@
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
         <product
-            *ngFor="let product of _products"
+            *ngFor="let product of (_products | orderByName : orderDirectionByName | orderByPrice : orderDirectionByPrice)"
             (buyItemClick)="buyItem($event)"
             [data]="product"
             class="column">

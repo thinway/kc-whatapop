@@ -22,6 +22,8 @@ import { UserProfileComponent } from "./components/user-profile/user-profile.com
 import { UserService } from "./services/user.service";
 import { PublicationDatePipe } from "./pipes/publication-date.pipe";
 import {ProductLikeComponent} from "./components/product-like/product-like.component";
+import {NameProductPipe} from "./pipes/name-product.pipe";
+import {PriceProductPipe} from "./pipes/price-product.pipe";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path                                                        |
@@ -46,7 +48,9 @@ import {ProductLikeComponent} from "./components/product-like/product-like.compo
         ProductsCollectionComponent,
         UserProfileComponent,
         PublicationDatePipe,
-        ProductLikeComponent
+        ProductLikeComponent,
+        NameProductPipe,
+        PriceProductPipe
     ],
     providers: [
         BackendUriProvider,

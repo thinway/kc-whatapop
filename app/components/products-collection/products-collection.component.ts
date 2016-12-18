@@ -15,6 +15,8 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
     
     private _products: Product[];
     private _filterStream$: Subject<ProductFilter> = new Subject;
+    private orderDirectionByName: string = "none";
+    private orderDirectionByPrice: string = "none";
 
     constructor(
         private _productService: ProductService,
@@ -47,5 +49,26 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
 
     buyItem(product: Product): void {
         this._router.navigate(["/products", product.id]);
+    }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+     | Red Wine Path                                                    |
+     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    changeOrderByName(): void {
+        // if( this.orderDirection === "asc" ) {
+        //     console.log("changeOrderByName: asc");
+        //     this.orderDirection = "desc";
+        // }else if( this.orderDirection === "desc" ) {
+        //     console.log("changeOrderByName: desc");
+        //     this.orderDirection = "asc";
+        // }
+        this.orderDirectionByName = this.orderDirectionByName === "asc" ? "desc" : "asc";
+        this.orderDirectionByPrice = "none";
+    }
+
+    changeOrderByPrice(): void {
+        this.orderDirectionByName = "none";
+        this.orderDirectionByPrice = this.orderDirectionByPrice === "asc" ? "desc" : "asc";
     }
 }

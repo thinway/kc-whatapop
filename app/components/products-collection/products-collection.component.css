@@ -1,3 +1,15 @@
+#product-filter-advanced {
+    margin-bottom: 25px;
+}
+
+#product-filter-advanced button {
+    cursor: pointer;
+}
+
+#product-filter-advanced i{
+    font-size: 20px;
+}
+
 :host>div:first-child {
     border-bottom: 1px dashed #2199e8;
     margin-bottom: 20px;
